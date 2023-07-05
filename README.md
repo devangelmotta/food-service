@@ -67,7 +67,7 @@ $ yarn run test:cov
   <h2>Jenkins</h2>
   <p>Jenkins es una herramienta de integración continua utilizada en este proyecto. Permite automatizar el proceso de construcción, prueba y despliegue del software.</p>
   <ul>
-    <li>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080/">http://ec2-44-201-238-197.compute-1.amazonaws.com:8080/</a></li>
+    <li>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080/">http://ec2-44-201-238-197.compute-1.amazonaws.com</a></li>
     <li>Datos de acceso:</li>
     <ul>
       <li>Usuario: amaris</li>
@@ -78,7 +78,7 @@ $ yarn run test:cov
   <h2>SonarQube</h2>
   <p>SonarQube es una plataforma para evaluar la calidad del código. Proporciona métricas y análisis estático para identificar posibles problemas y vulnerabilidades en el código fuente.</p>
   <ul>
-    <li>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000/dashboard?id=Food-services">http://ec2-44-206-250-56.compute-1.amazonaws.com:9000/dashboard?id=Food-services</a></li>
+    <li>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000/dashboard?id=Food-services">http://ec2-44-206-250-56.compute-1.amazonaws.com</a></li>
     <li>Datos de acceso:</li>
     <ul>
       <li>Usuario: admin</li>
@@ -89,7 +89,7 @@ $ yarn run test:cov
   <h2>API</h2>
   <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
   <ul>
-    <li>URL de acceso a la API: <a href="ec2-44-201-221-33.compute-1.amazonaws.com">ec2-44-201-221-33.compute-1.amazonaws.com</a></li>
+    <li>URL de acceso a la API: <a href="ec2-44-201-221-33.compute-1.amazonaws.com:3000">ec2-44-201-221-33.compute-1.amazonaws.com</a></li>
   </ul>
 
   <h2>Estructura del proyecto</h2>
