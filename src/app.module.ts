@@ -18,6 +18,7 @@ import { RecommendationsModule } from './recommendations/recommendations.module'
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         region: process.env.AWS_REGION || "us-east-1"
       },
+      local: false,
       logger: true
     }),
     UsersModule,
