@@ -89,7 +89,7 @@ $ yarn run test:cov
   <h2>API</h2>
   <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
   <ul>
-    <li>URL de acceso a la API: <a href="ec2-44-201-221-33.compute-1.amazonaws.com:3000">ec2-44-201-221-33.compute-1.amazonaws.com</a></li>
+    <li>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000">ec2-44-201-221-33.compute-1.amazonaws.com</a></li>
   </ul>
 
   <h2>Estructura del proyecto</h2>
