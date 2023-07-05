@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { DynamooseModule } from 'nestjs-dynamoose';
+import { RestaurantsModule } from './restaurants/restaurants.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { DynamooseModule } from 'nestjs-dynamoose';
         region: process.env.AWS_REGION
       },
       logger: true
-    })
+    }),
+    RestaurantsModule
   ],
   controllers: [AppController],
   providers: [AppService]
