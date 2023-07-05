@@ -58,16 +58,88 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## Support
+<!DOCTYPE html>
+<html>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+<body>
+  <h1>Sobre el proyecto</h1>
 
-## Stay in touch
+  <h2>Jenkins</h2>
+  <p>Jenkins es una herramienta de integración continua utilizada en este proyecto. Permite automatizar el proceso de construcción, prueba y despliegue del software.</p>
+  <ul>
+    <li>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080/">http://ec2-44-201-238-197.compute-1.amazonaws.com:8080/</a></li>
+    <li>Datos de acceso:</li>
+    <ul>
+      <li>Usuario: amaris</li>
+      <li>Contraseña: SomeNotSecurePassword</li>
+    </ul>
+  </ul>
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+  <h2>SonarQube</h2>
+  <p>SonarQube es una plataforma para evaluar la calidad del código. Proporciona métricas y análisis estático para identificar posibles problemas y vulnerabilidades en el código fuente.</p>
+  <ul>
+    <li>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000/dashboard?id=Food-services">http://ec2-44-206-250-56.compute-1.amazonaws.com:9000/dashboard?id=Food-services</a></li>
+    <li>Datos de acceso:</li>
+    <ul>
+      <li>Usuario: admin</li>
+      <li>Contraseña: SomeNotSecurePassword</li>
+    </ul>
+  </ul>
 
-## License
+  <h2>API</h2>
+  <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
+  <ul>
+    <li>URL de acceso a la API: <a href="ec2-44-201-221-33.compute-1.amazonaws.com">ec2-44-201-221-33.compute-1.amazonaws.com</a></li>
+  </ul>
 
-Nest is [MIT licensed](LICENSE).
+  <h2>Estructura del proyecto</h2>
+  <p>El proyecto NestJS se divide en las siguientes capas:</p>
+  <ol>
+    <li>Capa de usuarios: Esta capa se encarga de gestionar la autenticación y autorización de los usuarios, así como la gestión de perfiles y roles.</li>
+    <li>Capa de restaurantes: Aquí se encuentra la lógica relacionada con la gestión de restaurantes, como la creación, actualización y eliminación de restaurantes, así como la obtención de información detallada sobre ellos.</li>
+    <li>Capa de recomendaciones: Esta capa se encarga de generar las recomendaciones personalizadas para los usuarios, utilizando el algoritmo de recomendación implementado.</li>
+  </ol>
+
+  <h2>Algoritmo de Recomendación</h2>
+  <p>El algoritmo de recomendación implementado en esta aplicación utiliza una combinación de técnicas de filtrado basado en contenido y filtrado colaborativo para generar recomendaciones personalizadas para los usuarios. El objetivo es ofrecer sugerencias relevantes de restaurantes y comidas basadas en las preferencias y gustos del usuario.</p>
+
+  <h3>Filtrado basado en contenido</h3>
+
+  <p>El filtrado basado en contenido es una técnica que se basa en las características y atributos de los elementos para hacer recomendaciones. En este caso, se utiliza para calcular la similitud entre las preferencias del usuario y los restaurantes/comidas disponibles.</p>
+
+  <h4>Paso 1: Obtención de preferencias del usuario</h4>
+
+  <p>Antes de realizar las recomendaciones, se extraen las preferencias del usuario. Estas preferencias pueden incluir información sobre el tipo de cocina que le gusta, los ingredientes que prefiere, las restricciones dietéticas, etc.</p>
+
+  <h4>Paso 2: Creación de un mapa de ingredientes por comida</h4>
+
+  <p>Se crea un mapa que asocia cada comida con sus ingredientes correspondientes. Esto permite una búsqueda eficiente de los ingredientes cuando se calcula la similitud entre las preferencias y las comidas.</p>
+
+  <h4>Paso 3: Cálculo de la similitud entre preferencias y restaurantes</h4>
+
+  <p>Para cada restaurante, se calcula la similitud entre las preferencias del usuario y el restaurante en función de varios criterios, como el tipo de cocina y los ingredientes de las comidas ofrecidas por el restaurante. La similitud se calcula sumando puntos por cada criterio que coincida con las preferencias del usuario.</p>
+
+  <h4>Paso 4: Cálculo de la similitud entre preferencias y comidas</h4>
+
+  <p>Similar al paso anterior, se calcula la similitud entre las preferencias del usuario y cada comida disponible. Se considera la presencia de ingredientes en la comida que coincidan con las preferencias del usuario.</p>
+
+  <h3>Filtrado colaborativo</h3>
+
+  <p>El filtrado colaborativo es otra técnica utilizada en el algoritmo de recomendación. Se basa en el comportamiento y las elecciones de otros usuarios para hacer recomendaciones. Sin embargo, en esta implementación, el enfoque se centra principalmente en el filtrado basado en contenido.</p>
+
+  <h3>Baja complejidad algorítmica</h3>
+
+  <p>El algoritmo implementado logra una baja complejidad algorítmica en la generación de recomendaciones gracias a varias optimizaciones.</p>
+
+  <ul>
+    <li>Uso de estructuras de datos eficientes: Se utilizan mapas y conjuntos para almacenar y acceder a los datos de manera eficiente, lo que reduce el tiempo de búsqueda y comparación.</li>
+    <li>Búsqueda eficiente de ingredientes: Al crear un mapa de ingredientes por comida, se mejora la eficiencia al buscar los ingredientes necesarios para calcular la similitud.</li>
+    <li>Iteraciones optimizadas: El algoritmo utiliza bucles y estructuras de control para reducir la cantidad de iteraciones y evitar repeticiones innecesarias, mejorando así el rendimiento.</li>
+    <li>Uso de operaciones de suma: En lugar de realizar comparaciones exhaustivas entre todas las preferencias y los elementos disponibles, se utiliza un enfoque de suma para asignar puntos a las coincidencias, lo que simplifica el proceso y mejora la eficiencia.</li>
+  </ul>
+
+  <h2>Conclusiones</h2>
+
+  <p>El algoritmo de recomendación implementado en este proyecto NestJS combina técnicas de filtrado basado en contenido y filtrado colaborativo para generar recomendaciones personalizadas de restaurantes y comidas. Gracias a las optimizaciones y a una baja complejidad algorítmica, el algoritmo es capaz de ofrecer sugerencias relevantes y eficientes para los usuarios.</p>
+</body>
+</html>
