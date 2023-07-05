@@ -12,7 +12,7 @@ import { userSchema } from './entities/user.schema';
       options: {
         tableName: 'user',
       },
-    }]),
+    }])
   ],
   controllers: [UsersController],
   providers: [UsersService]
