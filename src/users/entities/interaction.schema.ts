@@ -1,30 +1,28 @@
 import { Schema } from 'dynamoose';
 
-export const mealSchema = new Schema({
+export const interactionSchema = new Schema({
   id: {
     type: String,
     hashKey: true,
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-  },
-  price: {
-    type: String,
-    required: true,
-  },
-  restaurantId: {
+  id_usuario: {
     type: String,
     required: true
   },
-  ingredients: {
-    type: Array,
-    schema: [String],
+  typeInteraction: {
+    type: String,
     required: true,
   },
-
+  valueInteraction: {
+    type: String,
+    required: true,
+  },
+  typeElement: {
+    type: String,
+    required: true,
+  },
+  id_element: {
+    type: String,
+    required: true,
+  }
 });
-

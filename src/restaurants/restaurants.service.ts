@@ -10,7 +10,7 @@ export class RestaurantsService {
 
   constructor(
     @InjectModel('Restaurants')
-    private restaurantModel: Model<IRestaurant, IRestaurantKey>,
+    private restaurantModel: Model<IRestaurant, IRestaurantKey>
   ) {}
 
   create(createRestaurantDto: CreateRestaurantDto) {

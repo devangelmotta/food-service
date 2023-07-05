@@ -1,5 +1,10 @@
 import { Schema } from 'dynamoose';
 
+const preferencesSchema = new Schema({
+  type: String,
+  value: String,
+});
+
 export const userSchema = new Schema({
   id: {
     type: String,
@@ -10,7 +15,8 @@ export const userSchema = new Schema({
     required: true,
   },
   preferences: {
-    type: Array<String>,
+    type: Array,
+    schema: [preferencesSchema],
     required: true,
   },
 

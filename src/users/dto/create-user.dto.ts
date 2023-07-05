@@ -1,5 +1,5 @@
 import { IsString, IsArray } from 'class-validator';
-
+import { Preferences as UserPreferences } from '../entities/user.interface';
 export class CreateUserDto {
 
     @IsString()
@@ -9,5 +9,5 @@ export class CreateUserDto {
     name: string;
   
     @IsArray()
-    preferences: Array<string>;
+    preferences: Array<UserPreferences>;
 }
