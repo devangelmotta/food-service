@@ -161,11 +161,7 @@ $ yarn run test:cov
 </ul>
 
 <h3>API</h3>
-Aquí tienes el código HTML para generar un botón verde estilo Postman con inline CSS:
-
-<a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-1120b72b-8003-4d75-8f52-3d4b86df4533?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; font-weight: bold; text-decoration: none; padding: 10px 20px; border-radius: 4px; border: none; cursor: pointer;">Run in Postman</a>
-
-Simplemente copia y pega este código en tu documento HTML y verás un botón verde con el texto "Run in Postman". Al hacer clic en el botón, se abrirá el enlace proporcionado en una nueva pestaña del navegador. ¡Disfruta de tu botón estilo Postman!
+<a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-1120b72b-8003-4d75-8f52-3d4b86df4533?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;">Run in Postman</a>
 
 <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
 <p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000">http://ec2-44-201-221-33.compute-1.amazonaws.com</a></p>
