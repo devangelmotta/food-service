@@ -141,7 +141,7 @@ $ yarn run test:cov
 
 <h3>Jenkins</h3>
 <p>Jenkins es una herramienta de integración continua utilizada en el proyecto. Permite automatizar el proceso de construcción, prueba y despliegue del software.</p>
-<p>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080" target="_blank" rel="noopener noreferrer">http://ec2-44-201-238-197.compute-1.amazonaws.com</a></p>
+<p>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080" target="_blank" rel="noopener noreferrer">http://ec2-44-201-238-197.compute-1.amazonaws.com:8080</a></p>
 <p>Datos de acceso:</p>
 <ul>
   <li>Usuario: amaris</li>
@@ -150,7 +150,7 @@ $ yarn run test:cov
 
 <h3>SonarQube</h3>
 <p>SonarQube es una plataforma para evaluar la calidad del código. Proporciona métricas y análisis estático para identificar posibles problemas y vulnerabilidades en el código fuente.</p>
-<p>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000" target="_blank" rel="noopener noreferrer">http://ec2-44-206-250-56.compute-1.amazonaws.com</a></p>
+<p>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000" target="_blank" rel="noopener noreferrer">http://ec2-44-206-250-56.compute-1.amazonaws.com:9000</a></p>
 <p>Datos de acceso:</p>
 <ul>
   <li>Usuario: admin</li>
@@ -160,7 +160,7 @@ $ yarn run test:cov
 <h3>API <a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-f10e6ce6-5e46-4f85-8046-ff394b52368f?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; height: 40px; width: 80px; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;">Run in Postman</a></h3>
 
 <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
-<p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000" target="_blank" rel="noopener noreferrer">http://ec2-44-201-221-33.compute-1.amazonaws.com</a></p>
+<p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000" target="_blank" rel="noopener noreferrer">http://ec2-44-201-221-33.compute-1.amazonaws.com:3000</a></p>
 
 <h2>Detalles Técnicos Deseados</h2>
 <p>En el proyecto se incluyeron patrones de desarrollo como SOLID y se generaron
