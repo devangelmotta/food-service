@@ -51,9 +51,6 @@ $ yarn run start:prod
 # unit tests
 $ yarn run test
 
-# e2e tests
-$ yarn run test:e2e
-
 # test coverage -> generates a folder with the report and an index.html to better view the report
 $ yarn run test:cov
 ```
@@ -144,7 +141,7 @@ $ yarn run test:cov
 
 <h3>Jenkins</h3>
 <p>Jenkins es una herramienta de integración continua utilizada en el proyecto. Permite automatizar el proceso de construcción, prueba y despliegue del software.</p>
-<p>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080">http://ec2-44-201-238-197.compute-1.amazonaws.com</a></p>
+<p>URL de Jenkins: <a href="http://ec2-44-201-238-197.compute-1.amazonaws.com:8080" target="_blank" rel="noopener noreferrer">http://ec2-44-201-238-197.compute-1.amazonaws.com</a></p>
 <p>Datos de acceso:</p>
 <ul>
   <li>Usuario: amaris</li>
@@ -153,7 +150,7 @@ $ yarn run test:cov
 
 <h3>SonarQube</h3>
 <p>SonarQube es una plataforma para evaluar la calidad del código. Proporciona métricas y análisis estático para identificar posibles problemas y vulnerabilidades en el código fuente.</p>
-<p>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000">http://ec2-44-206-250-56.compute-1.amazonaws.com</a></p>
+<p>URL de SonarQube: <a href="http://ec2-44-206-250-56.compute-1.amazonaws.com:9000" target="_blank" rel="noopener noreferrer">http://ec2-44-206-250-56.compute-1.amazonaws.com</a></p>
 <p>Datos de acceso:</p>
 <ul>
   <li>Usuario: admin</li>
@@ -163,7 +160,7 @@ $ yarn run test:cov
 <h3>API <a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-f10e6ce6-5e46-4f85-8046-ff394b52368f?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; height: 40px; width: 80px; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;">Run in Postman</a></h3>
 
 <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
-<p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000">http://ec2-44-201-221-33.compute-1.amazonaws.com</a></p>
+<p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000" target="_blank" rel="noopener noreferrer">http://ec2-44-201-221-33.compute-1.amazonaws.com</a></p>
 
 <h2>Detalles Técnicos Deseados</h2>
 <p>En el proyecto se incluyeron patrones de desarrollo como SOLID y se generaron
@@ -172,7 +169,8 @@ pruebas unitarias para las partes más importantes del código. Se mantuvo la mo
 
 
 
-<p> <b>Algunos aspectos a mejorar son los siguientes</b>: debido a limitaciones de tiempo, no se pudieron implementar todos los features deseados. Por ejemplo, el patrón de desarrollo utilizado no se considera ideal para este proyecto. Dado que una parte se basa en eventos (eventos de interacción, que pueden ser masivos) y otra en tráfico de datos más reducido, se sugiere una estructura hexagonal con el patrón de repositorio. La ventaja de una arquitectura hexagonal es que permite una división clara en capas y comunicación a través de puertos, lo que facilita la escalabilidad y el orden en comparación con un diseño rústico de DDD, donde las interacciones coexisten en la capa de usuarios a pesar de las enormes diferencias de funcionamiento e implementación. Dividir esta implementación en capas sería lo ideal. En cuanto al patrón de repositorio, es importante aislar las consultas a la base de datos en una capa independiente en términos de uso y optimización, especialmente debido a la gran cantidad de datos manejados por la aplicación. Separar las consultas ayuda a optimizar y realizar pruebas de manera más efectiva. Otro aspecto considerado fue el caching. Debido a los cálculos complejos que se realizan, se sugiere almacenar parte de la información en una caché, preferiblemente utilizando Redis, y actualizarla en base a eventos, ya que esto es una parte importante del negocio.</p>
+<p> <b>Algunos aspectos a mejorar son los siguientes</b>: <br></br>
+ debido a limitaciones de tiempo, no se pudieron implementar todos los features deseados. Por ejemplo, el patrón de desarrollo utilizado no se considera ideal para este proyecto. Dado que una parte se basa en eventos (eventos de interacción, que pueden ser masivos) y otra en tráfico de datos más reducido, se sugiere una estructura hexagonal con el patrón de repositorio. La ventaja de una arquitectura hexagonal es que permite una división clara en capas y comunicación a través de puertos, lo que facilita la escalabilidad y el orden en comparación con un diseño rústico de DDD, donde las interacciones coexisten en la capa de usuarios a pesar de las enormes diferencias de funcionamiento e implementación. Dividir esta implementación en capas sería lo ideal. En cuanto al patrón de repositorio, es importante aislar las consultas a la base de datos en una capa independiente en términos de uso y optimización, especialmente debido a la gran cantidad de datos manejados por la aplicación. Separar las consultas ayuda a optimizar y realizar pruebas de manera más efectiva. Otro aspecto considerado fue el caching. Debido a los cálculos complejos que se realizan, se sugiere almacenar parte de la información en una caché, preferiblemente utilizando Redis, y actualizarla en base a eventos, ya que esto es una parte importante del negocio.</p>
 
 <h3>Algoritmo de Recomendación</h3> <br></br>
 El algoritmo de recomendación implementado en esta aplicación utiliza una combinación de técnicas de filtrado basado en contenido y filtrado colaborativo para generar recomendaciones personalizadas para los usuarios. El objetivo es ofrecer sugerencias relevantes de restaurantes y comidas basadas en las preferencias y gustos del usuario.
