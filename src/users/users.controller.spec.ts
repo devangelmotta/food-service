@@ -37,7 +37,7 @@ describe('UsersController', () => {
       const createdUser: IUser = {
         id: '1',
         name: 'John Doe',
-        preferences: ['preference1', 'preference2'],
+        preferences: [{type: 'ingredient', value: 'papa amarilla'}],
       };
       //@ts-ignore
       jest.spyOn(service, 'create').mockResolvedValue(createdUser);
@@ -55,12 +55,12 @@ describe('UsersController', () => {
         {
           id: '1',
           name: 'John Doe',
-          preferences: ['preference1', 'preference2'],
+          preferences: [{type: 'ingredient', value: 'papa amarilla'}],
         },
         {
           id: '2',
           name: 'Jane Smith',
-          preferences: ['preference3', 'preference4'],
+          preferences: [{type: 'ingredient', value: 'papa amarilla'}],
         },
       ];
       //@ts-ignore
@@ -80,7 +80,7 @@ describe('UsersController', () => {
       const foundUser: IUser = {
         id: '1',
         name: 'John Doe',
-        preferences: ['preference1', 'preference2'],
+        preferences: [{type: 'ingredient', value: 'papa amarilla'}],
       };
       //@ts-ignore
       jest.spyOn(service, 'findOne').mockResolvedValue(foundUser);
@@ -97,13 +97,13 @@ describe('UsersController', () => {
       const userId: IUserKey = { id: '1' };
       const updateUserDto: UpdateUserDto = {
         name: 'Updated User',
-        preferences: ['updatedPreference'],
+        preferences: [{type: 'ingredient', value: 'salsa de tomate'}],
       };
 
       const updatedUser: IUser = {
         id: '1',
         name: 'Updated User',
-        preferences: ['updatedPreference'],
+        preferences: [{type: 'ingredient', value: 'salsa de tomate'}],
       };
       //@ts-ignore
       jest.spyOn(service, 'update').mockResolvedValue(updatedUser);

@@ -4,11 +4,13 @@ import { IUserKey, IUser } from './entities/user.interface';
 import { Model } from 'nestjs-dynamoose';
 import { userModel as userModelTesting } from './entities/user.model';
 
-
 describe('UsersService', () => {
   var usersService: UsersService;
   var userModel: Model<IUser, IUserKey>;
-
+  const mockPreference = {
+    type: 'ingredient',
+    value: 'sala de tomate'
+  }
   const userModelMock = {
     create: jest.fn(),
     scan: jest.fn(),
@@ -38,11 +40,12 @@ describe('UsersService', () => {
   });
 
   describe('create', () => {
+
     it('should create a user', async () => {
       const createUserDto = {
         id: '1',
         name: 'John Doe',
-        preferences: ['preference1', 'preference2'],
+        preferences: [mockPreference],
       };
   
       jest.spyOn(userModel, 'create').mockReturnValue(createUserDto as any);
@@ -60,8 +63,8 @@ describe('UsersService', () => {
   describe('findAll', () => {
     it('should return an array of users', async () => {
       const users = [
-        { id: '1', name: 'John Doe', preferences: ['preference1', 'preference2'] },
-        { id: '2', name: 'Jane Smith', preferences: ['preference3', 'preference4'] },
+        { id: '1', name: 'John Doe', preferences: [mockPreference] },
+        { id: '2', name: 'Jane Smith', preferences: [mockPreference] },
       ];
   
       const scanMock = {
@@ -84,7 +87,7 @@ describe('UsersService', () => {
   describe('findOne', () => {
     it('should return a user by ID', async () => {
       const userId: IUserKey = { id: '1' };
-      const user = { id: '1', name: 'John Doe', preferences: ['preference1', 'preference2'] };
+      const user = { id: '1', name: 'John Doe', preferences: [mockPreference] };
   
       const getMock = jest.fn().mockResolvedValue(user);
       jest.spyOn(userModel, 'get').mockImplementation(getMock);
@@ -100,7 +103,7 @@ describe('UsersService', () => {
   describe('update', () => {
     it('should update a user by ID', async () => {
       const userId: IUserKey = { id: '1' };
-      const updateUserDto = { name: 'Updated User', preferences: ['updatedPreference'] };
+      const updateUserDto = { name: 'Updated User', preferences: [mockPreference] };
   
       const updatedUser = { id: '1', ...updateUserDto };
   

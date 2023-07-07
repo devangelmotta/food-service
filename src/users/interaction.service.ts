@@ -13,6 +13,7 @@ export class InteractionService {
   ) {}
 
   create(createIntDto: CreateInteractionDto) {
+    console.log(createIntDto)
     return this.intModel.create({
       id: uuidv4(),
       ...createIntDto

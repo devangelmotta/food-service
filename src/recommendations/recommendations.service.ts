@@ -1,11 +1,11 @@
 //@ts-nocheck
 import { Injectable } from '@nestjs/common';
 import { InjectModel, Model } from 'nestjs-dynamoose';
-import { IUserKey, IUser } from 'src/users/entities/user.interface';
+import { IUserKey, IUser, Preferences } from 'src/users/entities/user.interface';
 import { IRestaurantKey, IRestaurant } from 'src/restaurants/entities/restaurant.interface';
 import { IMealKey, IMeal } from 'src/restaurants/entities/meal.interface';
 import { IInteractionKey, IInteraction } from 'src/users/entities/interaction.interface';
-
+ 
 @Injectable()
 export class RecommendationsService {
   constructor(
@@ -14,7 +14,7 @@ export class RecommendationsService {
     @InjectModel('Restaurants')
     private restaurantModel: Model<IRestaurant, IRestaurantKey>,
     @InjectModel('Meals')
-    private foodModel: Model<IMeal, IMealKey>,
+    private mealModel: Model<IMeal, IMealKey>,
     @InjectModel('Interaction')
     private interactionModel: Model<IInteraction, IInteractionKey>,
   ) {}
@@ -34,7 +34,7 @@ export class RecommendationsService {
    * @param userId El ID del usuario.
    * @returns Una promesa que se resuelve con un arreglo de preferencias.
    */
-  async getUserPreferences(userId: string): Promise<string[]> {
+  async getUserPreferences(userId: string): Promise<Preferences[]> {
     const user = await this.userModel.get({ id: userId });
 
     if (!user) {
@@ -85,7 +85,7 @@ export class RecommendationsService {
           interaction.typeElement === 'meal' &&
           !recommendedMeals.some((meal) => meal.id === interaction.idElement)
         ) {
-          const meal = await this.foodModel.get({ id: interaction.idElement });
+          const meal = await this.mealModel.get({ id: interaction.idElement });
           if (meal) {
             recommendedMeals.push(meal);
           }
@@ -192,7 +192,7 @@ export class RecommendationsService {
           }
         }
       }
-    }
+    } 
 
     return similarity;
   }
@@ -205,7 +205,7 @@ export class RecommendationsService {
   async recommendRestaurants(userId: string) {
     const user = await this.userModel.get(userId);
     const restaurants = await this.restaurantModel.scan().exec();
-    const foods = await this.foodModel.scan().exec();
+    const foods = await this.mealModel.scan().exec();
     const userPreferences = this.getUserPreferencesMap(user.preferences);
     const foodIngredientsMap = this.createFoodIngredientsMap(foods);
 
@@ -236,7 +236,7 @@ export class RecommendationsService {
    */
   async recommendFoods(userId: string) {
     const user = await this.userModel.get(userId);
-    const foods = await this.foodModel.scan().exec();
+    const foods = await this.mealModel.scan().exec();
 
     const userPreferences = this.getUserPreferencesMap(user.preferences);
     const foodIngredientsMap = this.createFoodIngredientsMap(foods);
@@ -278,3 +278,4 @@ export class RecommendationsService {
     };
   }
 }
+

@@ -38,13 +38,16 @@ describe('RestaurantsService', () => {
   describe('create', () => {
     it('should create a restaurant', async () => {
       const createRestaurantDto = {
-        id: '',
-        name: '',
-        location: '',
-        cuisineType: ''
+        id: '1',
+        name: 'Tacos Bell',
+        location: 'Bogotá, Colombia',
+        cuisineType: 'Mexicana'
       };
-
-      jest.spyOn(restaurantModel, 'create').mockReturnValue(CreateRestaurantDto as any);
+  
+      jest.spyOn(restaurantModel, 'create').mockImplementation((data) => {
+        const createdRestaurant = Object.assign(new CreateRestaurantDto(), data);
+        return createdRestaurant;
+      });
   
       const result = await service.create(createRestaurantDto);
   
@@ -55,7 +58,7 @@ describe('RestaurantsService', () => {
       expect(result).toEqual(createRestaurantDto);
     });
   });
-
+  
   describe('findAll', () => {
     it('should return an array of restaurants', async () => {
       const allRestaurants: IRestaurant[] = [
@@ -91,3 +94,6 @@ describe('RestaurantsService', () => {
   });
 
 });
+
+
+

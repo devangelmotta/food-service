@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { DynamooseModule } from 'nestjs-dynamoose';
@@ -23,9 +21,9 @@ import { RecommendationsModule } from './recommendations/recommendations.module'
     }),
     UsersModule,
     RestaurantsModule,
-    RecommendationsModule
+    RecommendationsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [],
+  providers: []
 })
 export class AppModule {}

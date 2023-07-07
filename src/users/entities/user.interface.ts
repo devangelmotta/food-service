@@ -9,5 +9,5 @@ export interface IUserKey {
   
   export interface IUser extends IUserKey {
     name: string;
-    preferences: Array<Preferences>;
+    preferences: Preferences[];
   }

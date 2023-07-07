@@ -8,4 +8,5 @@ export interface IMealKey {
     price: string;
     restaurantId: string;
     ingredients: Array<string>;
+    similarity?: number
   }

@@ -2,4 +2,4 @@ import * as dynamoose from "dynamoose";
 import { mealSchema } from "./meal.schema";
 
 export const mealModel = dynamoose
-    .model("Restaurant", mealSchema)
+    .model("Meal", mealSchema)

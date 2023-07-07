@@ -6,8 +6,8 @@ import { restaurantSchema } from 'src/restaurants/entities/restaurant.schema';
 import { mealSchema } from 'src/restaurants/entities/meal.schema';
 import { interactionSchema } from 'src/users/entities/interaction.schema';
 import { userSchema } from 'src/users/entities/user.schema';
-import { ContentBaseFilterService } from './content-based-filter.service';
-import { CollaborativeBasedFilterService } from './collaborative-based-filter.service ';
+import { CacheInterceptor } from '@nestjs/cache-manager';
+import { APP_INTERCEPTOR } from '@nestjs/core';
 
 const forFeactureConfig = [
   {
@@ -43,9 +43,7 @@ const forFeactureConfig = [
 @Module({
   controllers: [RecommendationsController],
   providers: [
-    RecommendationsService,
-    ContentBaseFilterService, 
-    CollaborativeBasedFilterService
+    RecommendationsService
   ],
   imports: [
     DynamooseModule.forFeature(forFeactureConfig)

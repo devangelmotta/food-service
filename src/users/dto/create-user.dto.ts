@@ -1,5 +1,6 @@
 import { IsString, IsArray } from 'class-validator';
 import { Preferences as UserPreferences } from '../entities/user.interface';
+
 export class CreateUserDto {
 
     @IsString()

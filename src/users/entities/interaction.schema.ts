@@ -14,7 +14,7 @@ export const interactionSchema = new Schema({
     required: true,
   },
   valueInteraction: {
-    type: String,
+    type: Number,
     required: true,
   },
   typeElement: {

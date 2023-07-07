@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel, Model } from 'nestjs-dynamoose';
 import { CreateRestaurantDto } from './dto/create-restaurant.dto';
-import { UpdateRestaurantDto } from './dto/update-restaurant.dto';
 import { IRestaurant, IRestaurantKey } from './entities/restaurant.interface';
 import { v4 as uuidv4 } from 'uuid';
 

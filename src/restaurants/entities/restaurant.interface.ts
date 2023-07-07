@@ -5,5 +5,6 @@ export interface IRestaurantKey {
   export interface IRestaurant extends IRestaurantKey {
     name: string,
     location: string,
-    cuisineType: string
+    cuisineType: string,
+    similarity?: number
   }

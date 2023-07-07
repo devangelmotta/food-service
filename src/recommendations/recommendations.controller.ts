@@ -1,6 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { CollaborativeBasedFilterService } from './collaborative-based-filter.service ';
-import { ContentBaseFilterService } from './content-based-filter.service';
+import { Controller, Get, Inject, Param, UseInterceptors } from '@nestjs/common';
 import { RecommendationsService } from './recommendations.service';
 
 @Controller('recommendations')
@@ -8,7 +6,6 @@ export class RecommendationsController {
   
   constructor(
     private readonly recomendationsService: RecommendationsService,
-
     ) {}
 
   @Get(':id')
