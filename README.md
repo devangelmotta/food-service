@@ -172,34 +172,34 @@ pruebas unitarias para las partes más importantes del código. Se mantuvo la mo
 
 
 
-<p> <b>Por falta de tiempo no pude implementar todo lo que quería. Algunos aspectos a mejorar son los siguientes</b>: debido a limitaciones de tiempo, no se pudieron implementar todos los features deseados. Por ejemplo, el patrón de desarrollo utilizado no se considera ideal para este proyecto. Dado que una parte se basa en eventos (eventos de interacción, que pueden ser masivos) y otra en tráfico de datos más reducido, se sugiere una estructura hexagonal con el patrón de repositorio. La ventaja de una arquitectura hexagonal es que permite una división clara en capas y comunicación a través de puertos, lo que facilita la escalabilidad y el orden en comparación con un diseño rústico de DDD, donde las interacciones coexisten en la capa de usuarios a pesar de las enormes diferencias de funcionamiento e implementación. Dividir esta implementación en capas sería lo ideal. En cuanto al patrón de repositorio, es importante aislar las consultas a la base de datos en una capa independiente en términos de uso y optimización, especialmente debido a la gran cantidad de datos manejados por la aplicación. Separar las consultas ayuda a optimizar y realizar pruebas de manera más efectiva. Otro aspecto considerado fue el caching. Debido a los cálculos complejos que se realizan, se sugiere almacenar parte de la información en una caché, preferiblemente utilizando Redis, y actualizarla en base a eventos, ya que esto es una parte importante del negocio.</p>
+<p> <b>Algunos aspectos a mejorar son los siguientes</b>: debido a limitaciones de tiempo, no se pudieron implementar todos los features deseados. Por ejemplo, el patrón de desarrollo utilizado no se considera ideal para este proyecto. Dado que una parte se basa en eventos (eventos de interacción, que pueden ser masivos) y otra en tráfico de datos más reducido, se sugiere una estructura hexagonal con el patrón de repositorio. La ventaja de una arquitectura hexagonal es que permite una división clara en capas y comunicación a través de puertos, lo que facilita la escalabilidad y el orden en comparación con un diseño rústico de DDD, donde las interacciones coexisten en la capa de usuarios a pesar de las enormes diferencias de funcionamiento e implementación. Dividir esta implementación en capas sería lo ideal. En cuanto al patrón de repositorio, es importante aislar las consultas a la base de datos en una capa independiente en términos de uso y optimización, especialmente debido a la gran cantidad de datos manejados por la aplicación. Separar las consultas ayuda a optimizar y realizar pruebas de manera más efectiva. Otro aspecto considerado fue el caching. Debido a los cálculos complejos que se realizan, se sugiere almacenar parte de la información en una caché, preferiblemente utilizando Redis, y actualizarla en base a eventos, ya que esto es una parte importante del negocio.</p>
 
-<h3>Algoritmo de Recomendación</h3>
+<h3>Algoritmo de Recomendación</h3> <br></br>
 El algoritmo de recomendación implementado en esta aplicación utiliza una combinación de técnicas de filtrado basado en contenido y filtrado colaborativo para generar recomendaciones personalizadas para los usuarios. El objetivo es ofrecer sugerencias relevantes de restaurantes y comidas basadas en las preferencias y gustos del usuario.
 
-<b>Filtrado basado en contenido<b>
+<b>Filtrado basado en contenido</b> <br></br>
 El filtrado basado en contenido es una técnica que utiliza las características y atributos de los elementos para hacer recomendaciones. En este caso, se utiliza para calcular la similitud entre las preferencias del usuario y los restaurantes/comidas disponibles.
 
-Paso 1: Obtención de preferencias del usuario
+Paso 1: Obtención de preferencias del usuario <br></br>
 Antes de realizar las recomendaciones, se extraen las preferencias del usuario. Estas preferencias pueden incluir información sobre el tipo de cocina que le gusta, los ingredientes que prefiere, las restricciones dietéticas, etc.
 
-Paso 2: Creación de un mapa de ingredientes por comida
+Paso 2: Creación de un mapa de ingredientes por comida <br></br>
 Se crea un mapa que asocia cada comida con sus ingredientes correspondientes. Esto permite una búsqueda eficiente de los ingredientes cuando se calcula la similitud entre las preferencias y las comidas.
 
-Paso 3: Cálculo de la similitud entre preferencias y restaurantes
+Paso 3: Cálculo de la similitud entre preferencias y restaurantes <br></br>
 Para cada restaurante, se calcula la similitud entre las preferencias del usuario y el restaurante en función de varios criterios, como el tipo de cocina y los ingredientes de las comidas ofrecidas por el restaurante. Tanto la similitud del restaurante como la similitud de las comidas con las preferencias del usuario suman puntos. Al final, los resultados se ordenan de mayor a menor puntaje de similitud, basándose en el tipo de comida que ofrece el restaurante, el nombre de la comida y los ingredientes. Cada aspecto suma puntos.
 
-Paso 4: Cálculo de la similitud entre preferencias y comidas
+Paso 4: Cálculo de la similitud entre preferencias y comidas <br></br>
 Similar al paso anterior, se calcula la similitud entre las preferencias del usuario y cada comida disponible. Se considera la presencia de ingredientes en la comida que coincidan con las preferencias del usuario. El cálculo es muy similar al anterior, pero en este caso no se tiene en cuenta el peso de similitud del restaurante.
 
-<b>Filtrado colaborativo<b>
+<b>Filtrado colaborativo</b> <br></br>
 El filtrado colaborativo es otra técnica utilizada en el algoritmo de recomendación. Se basa en el comportamiento y las elecciones de otros usuarios para hacer recomendaciones.
 
-Paso 1: Obtención de datos de interacciones del usuario y sus preferencias preestablecidas.
-Paso 2: Obtención de información de interacciones de otros usuarios.
+Paso 1: Obtención de datos de interacciones del usuario y sus preferencias preestablecidas. <br></br>
+Paso 2: Obtención de información de interacciones de otros usuarios. <br></br>
 Paso 3: Cálculo de los usuarios más cercanos mediante el cálculo de cosenos y la elaboración de un perfil temporal que busca patrones de interacciones similares (nearest neighbors). Una vez encontrados los usuarios más cercanos, es decir, aquellos usuarios con gustos similares al usuario en cuestión, se buscan comidas o restaurantes frecuentados por esos usuarios pero que no hayan sido visitados por nuestro cliente. Una vez encontrados esos elementos, se devuelven en un array. La fortaleza de este algoritmo radica en su enfoque híbrido, ya que es capaz de recomendar productos basados en los gustos del usuario y, al mismo tiempo, impulsar la prueba de nuevos productos interesantes (exitosos en usuarios similares).
 
-Baja complejidad algorítmica (Big O)
+Baja complejidad algorítmica (Big O) <br></br>
 El algoritmo implementado logra una baja complejidad algorítmica en la generación de recomendaciones gracias a varias optimizaciones.
 
 Uso de estructuras de datos eficientes: Se utilizan mapas y conjuntos para almacenar y acceder a los datos de manera eficiente, lo que reduce el tiempo de búsqueda y comparación.
