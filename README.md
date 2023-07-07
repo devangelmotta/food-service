@@ -160,7 +160,7 @@ $ yarn run test:cov
   <li>Contraseña: SomeNotSecurePassword</li>
 </ul>
 
-<h3>API</h3> <a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-1120b72b-8003-4d75-8f52-3d4b86df4533?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; height: 40px; width: 80px; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;"><h4>Run in Postman</h4></a>
+<h3>API <a href="https://www.postman.com/crimson-eclipse-5483/workspace/amaris-test/collection/5625566-1120b72b-8003-4d75-8f52-3d4b86df4533?action=share&creator=5625566" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #33AA5E; color: #FFFFFF; font-size: 14px; height: 40px; width: 80px; font-weight: bold; text-decoration: none; padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;">Run in Postman</a></h3>
 
 <p>La API es la parte central del proyecto NestJS y proporciona la funcionalidad principal del sistema.</p>
 <p>URL de acceso a la API: <a href="http://ec2-44-201-221-33.compute-1.amazonaws.com:3000">http://ec2-44-201-221-33.compute-1.amazonaws.com</a></p>
